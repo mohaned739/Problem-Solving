@@ -6,9 +6,16 @@ public class Solution {
     }
     int[] SquareArr(int []nums)
     {
-    for (int i = 0; i < nums.Length; i++)
+    int start = 0;
+    int end = nums.Length-1;
+    while (start<=end)
     {
-        nums[i] *= nums[i];
+        int left = nums[start] * nums[start];
+        int right = nums[end] * nums[end];
+        nums[start] = left;
+        nums[end] = right;
+        start++;
+        end--;
     }
     return nums;
 }
